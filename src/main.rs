@@ -1,8 +1,9 @@
 pub mod utils;
 
-use utils::{env::init_env, server::get_server_host};
+use utils::{env::init_env, server::init_server};
 
-fn main() {
+#[tokio::main]
+async fn main() {
     init_env();
-    let _host: String = get_server_host();
+    init_server().await;
 }
