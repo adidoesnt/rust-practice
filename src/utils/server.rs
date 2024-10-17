@@ -1,3 +1,4 @@
+use crate::api::controller::health;
 use crate::utils::env::get_env_var;
 use axum::{routing::get, Router};
 
@@ -9,10 +10,11 @@ fn get_server_host() -> String {
     host
 }
 
+#[axum::debug_handler]
 pub async fn init_server() {
     println!("Initialising server...");
     let host: String = get_server_host();
-    let app = Router::new().route("/", get(|| async { "Hello, World!" }));
+    let app = Router::new().route("/", get(health::get_health));
     let listener: tokio::net::TcpListener = tokio::net::TcpListener::bind(&host).await.unwrap();
     println!("Listening on {}", host);
     axum::serve(listener, app).await.unwrap();

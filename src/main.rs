@@ -1,4 +1,5 @@
 pub mod utils;
+pub mod api;
 
 use utils::{env::init_env, server::init_server};
 
