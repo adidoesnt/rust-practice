@@ -1,7 +1,8 @@
+use crate::utils::logger::Logger;
 use dotenv::dotenv;
 
 pub fn init_env() {
-    println!("Reading env variables...");
+    Logger::debug(&format!("Reading env variables..."));
     dotenv().ok();
 }
 
