@@ -1,10 +1,8 @@
 pub mod utils;
 
-use utils::env::{get_env_var, init_env};
+use utils::{env::init_env, server::get_server_host};
 
 fn main() {
     init_env();
-
-    let port: u16 = get_env_var("PORT", "12001").parse::<u16>().unwrap();
-    println!("Read port from env: {}", port);
+    let _host: String = get_server_host();
 }
