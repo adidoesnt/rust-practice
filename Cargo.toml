@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 axum = {version = "0.7.7", features = ["macros"]}
 chrono = "0.4.38"
+colour = "2.1.0"
 dotenv = "0.15.0"
 serde = { version = "1.0.210", features = ["derive", "std"] }
 serde_json = "1.0.128"

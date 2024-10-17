@@ -260,6 +260,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "colour"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b536eebcabe54980476d120a182f7da2268fe02d22575cca99cee5fdda178280"
+dependencies = [
+ "winapi 0.3.9",
+]
+
+[[package]]
 name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2051,6 +2060,7 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "chrono",
+ "colour",
  "dotenv",
  "serde",
  "serde_json",
